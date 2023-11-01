@@ -1,5 +1,5 @@
 
-TASKS PARA FAZER
+TASKS PARA FAZER - TRABALHANDO COM FIREBASE
 
 * se for ter onde mostrar os posts curtidos do usuario logado e não tiver mais o post curtido,
 ao navegar para a tela verificar se tem o post, caso não tenha exibe uma mensagem.
