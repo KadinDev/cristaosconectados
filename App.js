@@ -1,20 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, ActivityIndicator, StatusBar } from 'react-native';
+
+import {AuthProvider} from './src/contexts/auth';
+import { Routes } from './src/routes';
+import theme from './src/theme';
+
+import { 
+  useFonts, 
+  Roboto_400Regular, 
+  Roboto_500Medium, 
+  Roboto_700Bold 
+} from '@expo-google-fonts/roboto';
+
+import { 
+  JosefinSans_400Regular, 
+  JosefinSans_500Medium, 
+  JosefinSans_700Bold 
+} from '@expo-google-fonts/josefin-sans';
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
+    JosefinSans_400Regular,
+    JosefinSans_500Medium,
+    JosefinSans_700Bold
+  });
+  
+
+  if(!fontsLoaded){
+    return (
+      <View
+        style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
+      >
+        <StatusBar barStyle='dark-content' translucent backgroundColor='transparent' />
+
+        <ActivityIndicator
+          size={40}
+          color={theme.COLORS.PLACEHOLDER}
+        />
+      </View>
+    )
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AuthProvider>
+        <Routes/>
+    </AuthProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

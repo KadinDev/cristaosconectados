@@ -1,0 +1,16 @@
+
+TASKS PARA FAZER
+
+* se for ter onde mostrar os posts curtidos do usuario logado e não tiver mais o post curtido,
+ao navegar para a tela verificar se tem o post, caso não tenha exibe uma mensagem.
+
+* a mesma ideia acima para as conexões do usuário logado, caso alguém tenha excluído a conta e não tiver
+mais, exibe a mensagem.
+
+* ao criar um post, fazer a navegação para exibição desse post e não para a tela Home
+
+* scroll infinito na tela home
+
+* na função de carregar TODOS, está faltando ordenar por curtidas e comentários, ou deixa aleatoriamente mesmo
+
+* animar coração da curtida
